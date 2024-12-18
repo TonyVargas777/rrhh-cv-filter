@@ -27,9 +27,11 @@ function App() {
       }
 
       // Verificar si todas las palabras clave coinciden de forma excluyente
-      const keywordsLower = keywords.map(keyword => keyword.toLowerCase());
+      const keywordsLower = keywords.map((keyword) => keyword.toLowerCase());
       const fileTextLower = text.toLowerCase();
-      const isMatch = keywordsLower.every(keyword => fileTextLower.includes(keyword));
+      const isMatch = keywordsLower.every((keyword) =>
+        fileTextLower.includes(keyword)
+      );
 
       if (isMatch) {
         matchingFiles.push(file.name);
@@ -45,10 +47,10 @@ function App() {
     const doc = new jsPDF();
     let yPosition = 10;
     const maxResultsPerPage = 28; // Ajusta este valor según la cantidad de resultados que caben en una página.
-  
+
     doc.text("Listado de CVs Filtrados", 10, yPosition);
     yPosition += 10;
-  
+
     for (let i = 0; i < fileNames.length; i++) {
       if (i > 0 && i % maxResultsPerPage === 0) {
         doc.addPage();
@@ -59,26 +61,37 @@ function App() {
       doc.text(`${i + 1}. ${fileNames[i]}`, 10, yPosition);
       yPosition += 10;
     }
-  
+
     doc.save("CVs_Filtrados.pdf");
   };
-  
 
   return (
     <div className="box">
-      <h1>ANCIENT CV FILTER</h1>
+      <h1>PDF AND WORD</h1>
+      <h1>CV FILTER</h1>
+      <p>1. Ingresa las palabras clave en el campo de búsqueda.</p>   
       <KeywordsInput keywords={keywords} setKeywords={setKeywords} />
       <FileUploader setFiles={setFiles} />
-      <button onClick={handleFilter} disabled={isFiltering}>Filtrar</button>
+      <p>
+        3. Haz clic en el botón de **Filtrar** para procesar los documentos.
+      </p>
+     
+      <button onClick={handleFilter} disabled={isFiltering}>
+        Filtrar
+      </button>
 
-      {isFiltering && <div style={{ fontSize: '24px', textAlign: 'center', marginTop: '20px' }}>Filtrando...</div>}
-
+      {isFiltering && (
+        <div
+          style={{ fontSize: "24px", textAlign: "center", marginTop: "20px" }}
+        >
+          Filtrando...
+        </div>
+      )}
+ <p>4. Revisa los resultados en pantalla y exporta los resultados en un archivo PDF.</p>
       <h3>Resultados:</h3>
       <ul>
         {filteredCVs.length > 0 ? (
-          filteredCVs.map((cv, index) => (
-            <li key={index}>{cv}</li>
-          ))
+          filteredCVs.map((cv, index) => <li key={index}>{cv}</li>)
         ) : (
           <li>No hay resultados positivos</li>
         )}

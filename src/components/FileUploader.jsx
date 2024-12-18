@@ -8,7 +8,9 @@ const FileUploader = ({ setFiles }) => {
 
   return (
     <div>
-      <h3>Subir CVs</h3>
+      <p>
+        2. Sube los archivos CVs usando el componente de subida de archivos.
+      </p>
       <input
         type="file"
         multiple
