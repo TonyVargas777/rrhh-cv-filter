@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("/2.avif");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  background-color: rgba(0, 255, 255, 0.8);
+  padding: 20px;
+  border: double 5px #333;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Ajusta el ancho según el dispositivo */
+  max-width: 400px;
+  overflow-y: auto; /* Permitir scroll vertical en móviles */
+  height: 80vh; /* Alto visible en móviles */
+}
+
+h1, h3 {
+  color: #333;
+  text-align: center; /* Centrar textos para dispositivos móviles */
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: block; /* Mostrar el botón como bloque en móviles */
+  width: 100%; /* Ancho completo en dispositivos móviles */
+}
