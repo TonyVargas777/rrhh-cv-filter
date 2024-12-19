@@ -1,0 +1,43 @@
+/* FileUploader.css */
+
+.file-uploader {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .dropzone {
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .dropzone.active {
+    background-color: #e3f2fd;
+    border-color: #2196f3;
+  }
+  
+  .upload-icon {
+    font-size: 40px;
+    color: #aaa;
+    margin-bottom: 10px;
+  }
+  
+  .dropzone p {
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+  }
+  
+  .dropzone strong {
+    color: #2196f3;
+    font-weight: bold;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  

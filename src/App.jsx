@@ -69,13 +69,13 @@ function App() {
     <div className="box">
       <h1>PDF AND WORD</h1>
       <h1>CV FILTER</h1>
-      <p>1. Ingresa las palabras clave en el campo de búsqueda.</p>   
+      <p>1. Ingresa las palabras clave en el campo de búsqueda.</p>
       <KeywordsInput keywords={keywords} setKeywords={setKeywords} />
       <FileUploader setFiles={setFiles} />
       <p>
-        3. Haz clic en el botón de **Filtrar** para procesar los documentos.
+        3. Haz clic en el botón de <strong>Filtrar</strong> para procesar los documentos.
       </p>
-     
+
       <button onClick={handleFilter} disabled={isFiltering}>
         Filtrar
       </button>
@@ -87,7 +87,10 @@ function App() {
           Filtrando...
         </div>
       )}
- <p>4. Revisa los resultados en pantalla y exporta los resultados en un archivo PDF.</p>
+      <p>
+        4. Revisa los resultados en pantalla y exporta los resultados en un
+        archivo PDF.
+      </p>
       <h3>Resultados:</h3>
       <ul>
         {filteredCVs.length > 0 ? (
