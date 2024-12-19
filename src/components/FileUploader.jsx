@@ -30,8 +30,9 @@ const FileUploader = ({ setFiles }) => {
   };
 
   return (
+    <div>  
     <div className="file-uploader">
-      <p>2. Suba los CVs usando el componente de subida de archivos.</p>
+      <p>2. Suba los CVs usando los componentes de subida de archivos.</p>
 
       {/* Drag-and-drop container */}
       <div
@@ -43,20 +44,20 @@ const FileUploader = ({ setFiles }) => {
         <div className="upload-icon">📁</div>
         <p>
           <strong>Drop your files here</strong>
-        </p>
-        <input
-          type="file"
-          accept=".pdf,.doc,.docx,.txt"
-          multiple
-          onChange={handleFileChange}
-          className="file-input"
-        />
+        </p>        
       </div>
-
+      <br />
+      <input
+      type="file"
+      multiple
+      accept=".*"
+      onChange={handleFileChange}
+    />
       {/* Mostrar el número de archivos cargados */}
       {fileCount > 0 && (
         <p className="file-count">Ha añadido {fileCount} archivo(s).</p>
       )}
+    </div>
     </div>
   );
 };

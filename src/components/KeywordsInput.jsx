@@ -10,7 +10,7 @@ function KeywordsInput({ keywords, setKeywords }) {
     <div>
       <input
         type="text"
-        placeholder="Introduce palabra clave"
+        placeholder="Introduzca palabra clave"
         onKeyDown={(e) => {
           if (e.key === 'Enter' && e.target.value.trim() !== '') {
             setKeywords([...keywords, e.target.value.trim()]);
