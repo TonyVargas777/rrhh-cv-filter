@@ -50,7 +50,7 @@ const FileUploader = ({ setFiles }) => {
       <input
       type="file"
       multiple
-      accept=".*"
+      accept=".pdf,.docx,.doc,.txt"
       onChange={handleFileChange}
     />
       {/* Mostrar el número de archivos cargados */}
