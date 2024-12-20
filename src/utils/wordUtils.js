@@ -7,12 +7,18 @@ export const extractTextFromWord = (file) => {
       try {
         const arrayBuffer = e.target.result;
         const { value } = await mammoth.extractRawText({ arrayBuffer });
-        resolve(value);
+        resolve(value.trim()); // Eliminamos espacios adicionales
       } catch (error) {
         console.error("Error al procesar el archivo Word:", error);
-        reject(error);
+        reject(new Error("No se pudo procesar el archivo Word. Verifique el formato."));
       }
     };
+
+    reader.onerror = () => {
+      console.error("Error al leer el archivo Word.");
+      reject(new Error("Error al leer el archivo Word. Inténtelo de nuevo."));
+    };
+
     reader.readAsArrayBuffer(file);
   });
 };

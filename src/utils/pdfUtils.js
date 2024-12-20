@@ -1,6 +1,5 @@
 import * as pdfjsLib from "pdfjs-dist";
 
-// Configurar la ruta del worker desde la carpeta public
 pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
 
 export const extractTextFromPDF = async (file) => {
@@ -20,10 +19,10 @@ export const extractTextFromPDF = async (file) => {
         resolve(fullText);
       } catch (error) {
         console.error("Error al procesar el PDF:", error);
-        reject(error);
+        reject(new Error("No se pudo procesar el PDF. Verifique el archivo."));
       }
     };
-    reader.onerror = () => reject(new Error("Error al leer el archivo"));
+    reader.onerror = () => reject(new Error("Error al leer el archivo."));
     reader.readAsArrayBuffer(file);
   });
 };
