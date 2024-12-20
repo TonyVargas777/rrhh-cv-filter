@@ -46,7 +46,7 @@ const FileUploader = ({ setFiles }) => {
         >
           <div className="upload-icon">📁</div>
           <p>
-            <strong>Arrastre sus archivos aquí o haga clic para subirlos.</strong>
+            <strong>Arrastre sus archivos aquí.</strong>
           </p>
         </div>
         <br />
