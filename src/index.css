@@ -11,7 +11,15 @@ body {
   align-items: center;
   height: 100vh;
 }
-
+.header{
+  background-color: rgba(0, 255, 255, 0.8);
+  padding: 0px 20px 0px 20px;
+  border: double 5px #333;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Ajusta el ancho según el dispositivo */
+  max-width: 400px;
+}
 .box {
   background-color: rgba(0, 255, 255, 0.8);
   padding: 20px;
@@ -21,7 +29,8 @@ body {
   width: 90%; /* Ajusta el ancho según el dispositivo */
   max-width: 400px;
   overflow-y: auto; /* Permitir scroll vertical en móviles */
-  height: 80vh; /* Alto visible en móviles */
+  height: 85vh;
+  max-height: 800px;
 }
 
 h1, h3 {
@@ -35,6 +44,15 @@ button {
   cursor: pointer;
   display: block; /* Mostrar el botón como bloque en móviles */
   width: 100%; /* Ancho completo en dispositivos móviles */
+}
+
+
+input:focus+label {
+  transform: translateY(-25px);
+  color: #0051ff;
+}
+input:focus{
+  border-color: #0051ff;
 }
 
 .box-dots {
@@ -82,7 +100,7 @@ button {
 @keyframes pulse {
   0% {
     transform: scale(0.8);
-    background-color: #b3d4fc;
+    background-color: black;
     box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
   }
 
@@ -94,7 +112,7 @@ button {
 
   100% {
     transform: scale(0.8);
-    background-color: #b3d4fc;
+    background-color: black;
     box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
   }
 }
