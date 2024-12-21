@@ -69,34 +69,44 @@ function App() {
     <div className="box">
       <h1>PDF AND WORD</h1>
       <h1>CV FILTER</h1>
-      <p>1. Ingrese las palabras clave en el campo de búsqueda.</p>
-      <KeywordsInput keywords={keywords} setKeywords={setKeywords} />
       <FileUploader setFiles={setFiles} />
       <p>
-        3. Haga clic en el botón de <strong>Filtrar</strong> para procesar los
-        documentos.
+        <strong>2.</strong> Ingrese las palabras clave en el campo de búsqueda.
       </p>
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
-      <button
-        onClick={handleFilter}
-        disabled={isFiltering}
-        style={{
-          width: "100px",
-        }}
+      <KeywordsInput keywords={keywords} setKeywords={setKeywords} />
+
+      <p>
+        <strong>3.</strong> Haga clic en el botón de <strong>Filtrar</strong>{" "}
+        para procesar los documentos.
+      </p>
+      <div
+        style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
       >
-        FILTRAR
-      </button>
+        <button
+          onClick={handleFilter}
+          disabled={isFiltering}
+          style={{
+            width: "100px",
+          }}
+        >
+          FILTRAR
+        </button>
       </div>
       {isFiltering && (
-        <div
-          style={{ fontSize: "24px", textAlign: "center", marginTop: "20px" }}
-        >
-          Filtrando...
+        <div class="box-dots">
+          <section class="dots-container">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </section>
         </div>
       )}
+
       <p>
-        4. Revise los resultados en pantalla y se exportan automáticamente los
-        resultados en un archivo PDF.
+        <strong>4.</strong> Revise los resultados en pantalla que se exportan
+        automáticamente a un archivo PDF.
       </p>
       <h3>Resultados:</h3>
       <ul>

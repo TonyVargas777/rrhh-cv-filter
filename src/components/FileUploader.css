@@ -4,6 +4,12 @@
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 20px;
+    text-align: center;
+    border: 3px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: lightskyblue;
   }
   
   .dropzone {
@@ -40,4 +46,6 @@
   .file-input {
     display: none;
   }
-  
+  p{
+    text-align: left;
+  }

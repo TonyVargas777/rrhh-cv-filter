@@ -1,14 +1,15 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
   server: {
     fs: {
       allow: [
-        // Añade la ruta completa de tu proyecto aquí
-        "C:/Users/Raquel/Desktop/Web Dev/UDEMY/REACT/rrhh-cv-filter",
-      ],
-    },
-  },
+        // Allow serving files from the root project folder
+        'C:/Users/TONAC/Desktop/Web Dev/Udemy/REACT/rrhh-cv-filter',
+        'C:/Users/TONAC/Desktop/Web Dev/Udemy/REACT/rrhh-cv-filter/node_modules/vite/dist/client'
+      ]
+    }
+  }
 });

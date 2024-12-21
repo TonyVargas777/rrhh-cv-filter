@@ -58,7 +58,7 @@ function KeywordsInput({ keywords, setKeywords }) {
         {keywords.map((keyword, index) => (
           <span key={index} style={{ margin: '5px', display: 'inline-flex', alignItems: 'center' }}>
             {keyword}
-            <button onClick={() => handleDelete(index)} style={{ marginLeft: '5px' }}>
+            <button onClick={() => handleDelete(index)} style={{ marginLeft: '5px', marginBottom:'7px' }}>
               🗑️
             </button>
           </span>

@@ -35,30 +35,34 @@ const FileUploader = ({ setFiles }) => {
 
   return (
     <div>
+      <p>
+        <strong>1.</strong> Suba los CVs usando los componentes de subida de
+        archivos.
+      </p>
       <div className="file-uploader">
-        <p>2. Suba los CVs usando los componentes de subida de archivos.</p>
-
-        <div
-          className={`dropzone ${dragActive ? "active" : ""}`}
-          onDragOver={handleDragOver}
-          onDragLeave={handleDragLeave}
-          onDrop={handleDrop}
-        >
-          <div className="upload-icon">📁</div>
-          <p>
-            <strong>Arrastre sus archivos aquí.</strong>
-          </p>
+        <div>
+          <div
+            className={`dropzone ${dragActive ? "active" : ""}`}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+          >
+            <div className="upload-icon">📁</div>
+            <h3>
+              <strong>Arrastre sus archivos aquí.</strong>
+            </h3>
+          </div>
+          <br />
+          <input
+            type="file"
+            multiple
+            accept=".pdf,.docx,.doc,.txt"
+            onChange={handleFileChange}
+          />
+          {fileCount > 0 && (
+            <p className="file-count">Ha añadido {fileCount} archivo(s).</p>
+          )}
         </div>
-        <br />
-        <input
-          type="file"
-          multiple
-          accept=".pdf,.docx,.doc,.txt"
-          onChange={handleFileChange}
-        />
-        {fileCount > 0 && (
-          <p className="file-count">Ha añadido {fileCount} archivo(s).</p>
-        )}
       </div>
     </div>
   );
