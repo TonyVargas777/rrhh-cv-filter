@@ -2,7 +2,9 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  /* background-image: url("/2.avif"); */
   background-image: url("/recursos.avif");
+  /* background-image: url("https://picsum.photos/1080/1080?tech/"); */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -11,9 +13,17 @@ body {
   align-items: center;
   height: 100vh;
 }
-
-.box {
+.header{
   background-color: rgba(0, 255, 255, 0.8);
+  padding: 0px 20px 0px 20px;
+  border: double 5px #333;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Ajusta el ancho según el dispositivo */
+  max-width: 400px;
+}
+.box {
+  background-color: rgba(0, 200, 255, 0.9);
   padding: 20px;
   border: double 5px #333;
   border-radius: 10px;
@@ -21,7 +31,8 @@ body {
   width: 90%; /* Ajusta el ancho según el dispositivo */
   max-width: 400px;
   overflow-y: auto; /* Permitir scroll vertical en móviles */
-  height: 80vh; /* Alto visible en móviles */
+  height: 85vh;
+  max-height: 800px;
 }
 
 h1, h3 {
@@ -35,4 +46,75 @@ button {
   cursor: pointer;
   display: block; /* Mostrar el botón como bloque en móviles */
   width: 100%; /* Ancho completo en dispositivos móviles */
+}
+
+
+input:focus+label {
+  transform: translateY(-25px);
+  color: #0051ff;
+}
+input:focus{
+  border-color: #0051ff;
+}
+
+.box-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.dots-container {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  width: 50%;
+  height: 10%;
+}
+
+.dot {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #b3d4fc;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.dot:last-child {
+  margin-right: 0;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.3s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.1s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    background-color: black;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: #6793fb;
+    box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
+  }
+
+  100% {
+    transform: scale(0.8);
+    background-color: black;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
 }
