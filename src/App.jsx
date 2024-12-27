@@ -46,9 +46,20 @@ function App() {
   const generatePDF = (fileNames) => {
     const doc = new jsPDF();
     let yPosition = 10;
-    const maxResultsPerPage = 28; // Ajusta este valor según la cantidad de resultados que caben en una página.
+    const maxResultsPerPage = 28; // Máximo de resultados por página.
 
+    // 📝 Título del PDF
+    doc.setFontSize(16);
     doc.text("Listado de CVs Filtrados", 10, yPosition);
+    yPosition += 10;
+
+    // 📝 Palabras clave
+    doc.setFontSize(12);
+    doc.text(`Palabras clave: ${keywords.join(", ")}`, 10, yPosition);
+    yPosition += 10;
+
+    // 📝 Listado de resultados
+    doc.text("Listado:", 10, yPosition);
     yPosition += 10;
 
     for (let i = 0; i < fileNames.length; i++) {
@@ -57,12 +68,18 @@ function App() {
         yPosition = 10;
         doc.text("Listado de CVs Filtrados", 10, yPosition);
         yPosition += 10;
+        doc.text(`Palabras clave: ${keywords.join(", ")}`, 10, yPosition);
+        yPosition += 10;
+        doc.text("Listado:", 10, yPosition);
+        yPosition += 10;
       }
       doc.text(`${i + 1}. ${fileNames[i]}`, 10, yPosition);
       yPosition += 10;
     }
 
-    doc.save("CVs_Filtrados.pdf");
+    // 📄 Nombre del archivo dinámico
+    const keywordsForFileName = keywords.join("_") || "SinPalabrasClave";
+    doc.save(`CVs_Filtrados_${keywordsForFileName}.pdf`);
   };
 
   return (
